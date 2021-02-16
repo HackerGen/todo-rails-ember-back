@@ -12,6 +12,7 @@ rerun.txt
 pickle-email-*.html
 
 # Ignore pidfiles, but keep the directory.
+/tmp/
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
@@ -69,3 +70,6 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+
+# Jetbrains ".idea"
+/.idea
