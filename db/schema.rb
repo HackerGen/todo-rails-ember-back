@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_155415) do
+ActiveRecord::Schema.define(version: 2021_02_16_155859) do
+
+  create_table "todo_items", force: :cascade do |t|
+    t.string "name"
+    t.boolean "done"
+    t.integer "todo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["todo_id"], name: "index_todo_items_on_todo_id"
+  end
 
   create_table "todos", force: :cascade do |t|
     t.string "title"
@@ -18,4 +27,5 @@ ActiveRecord::Schema.define(version: 2021_02_16_155415) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "todo_items", "todos"
 end
